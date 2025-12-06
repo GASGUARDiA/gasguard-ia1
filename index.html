@@ -1,161 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GasGuard IA</title>
-<style>
-body {
-    margin:0;
-    padding:0;
-    font-family: Arial;
-    background:#0A1A2F;
-    color:white;
-}
-.header {
-    padding:20px;
-    background:#1E90FF;
-    text-align:center;
-    font-size:22px;
-    font-weight:bold;
-}
-.container {
-    padding:20px;
-}
-.botao {
-    width:100%;
-    padding:15px;
-    margin:10px 0;
-    background:#1E90FF;
-    border:none;
-    border-radius:8px;
-    font-size:18px;
-    color:white;
-    cursor:pointer;
-}
-.botao:hover { opacity:0.85; }
-.card {
-    background:#102338;
-    padding:15px;
-    border-radius:10px;
-    margin-bottom:20px;
-}
-.titulo { font-size:20px; margin-bottom:10px; }
-.comentarios ul { padding-left:20px; }
-.grafico {
-    width:100%;
-    height:200px;
-    background:#0F1C2D;
-    border-radius:10px;
-    margin-top:10px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#88b7ff;
-    font-size:16px;
-    border:1px solid #1E90FF;
-}
-.secao { display:none; }
-.mapa {
-    width:100%;
-    height:300px;
-    background:#102338;
-    border-radius:10px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#88b7ff;
-    font-size:18px;
-}
-input, textarea {
-    width:100%;
-    padding:10px;
-    margin-bottom:10px;
-    border-radius:8px;
-    border:none;
-}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhes do Posto - GasGuard IA</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial;
+            background: #0A1A2F;
+            color: white;
+        }
+
+        .header {
+            padding: 20px;
+            background: #1E90FF;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo {
+            width: 130px;
+            margin: 20px auto 5px auto;
+            display: block;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            background: #102338;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .titulo {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .avaliacao {
+            margin-bottom: 10px;
+        }
+
+        .comentarios ul {
+            padding-left: 20px;
+        }
+
+        .botao {
+            width: 100%;
+            padding: 15px;
+            margin-top: 15px;
+            background: #1E90FF;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .botao:hover {
+            opacity: 0.85;
+        }
+
+        .grafico {
+            width: 100%;
+            height: 200px;
+            background: #0F1C2D;
+            border-radius: 10px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #88b7ff;
+            font-size: 16px;
+            border: 1px solid #1E90FF;
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="header">GasGuard IA</div>
+    <img src="LOGO.PNG" alt="Logo" class="logo">
 
-<div class="container">
+    <div class="header">Posto Selecionado</div>
 
-  <!-- Tela inicial -->
-  <div id="inicio" class="secao" style="display:block;">
-    <button class="botao" onclick="mostrarSecao('alertas')">Ver Alertas</button>
-    <button class="botao" onclick="mostrarSecao('relatos')">Adicionar Relato</button>
-    <button class="botao" onclick="mostrarSecao('mapa')">Ver Mapa</button>
-    <button class="botao" onclick="mostrarSecao('posto')">Detalhes do Posto</button>
-  </div>
+    <div class="container">
 
-  <!-- Alertas -->
-  <div id="alertas" class="secao">
-    <div class="card">
-      <div class="titulo">Posto A</div>
-      <p>Suspeita de adulteração: 70%</p>
+        <div class="card">
+            <div class="titulo">Nome do posto</div>
+            <div class="avaliacao">⭐ Nota: 4.2</div>
+            <div class="avaliacao">🔍 Suspeita IA: 68%</div>
+        </div>
+
+        <div class="card">
+            <div class="titulo">Relatório da IA</div>
+            <p>Alta chance de adulteração.</p>
+            <p>Reclamações recentes: carro falhando, consumo elevado, dificuldade na partida.</p>
+        </div>
+
+        <div class="card comentarios">
+            <div class="titulo">Comentários recentes</div>
+            <ul>
+                <li>“Meu carro engasgou depois de abastecer.”</li>
+                <li>“Consumo aumentou muito.”</li>
+                <li>“Gasolina com cheiro estranho.”</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="titulo">Gráfico de reputação</div>
+            <div class="grafico">Gráfico aparecerá aqui</div>
+        </div>
+
+        <button class="botao">Adicionar relato</button>
+
     </div>
-    <div class="card">
-      <div class="titulo">Posto B</div>
-      <p>Suspeita de adulteração: 55%</p>
-    </div>
-    <button class="botao" onclick="mostrarSecao('inicio')">Voltar</button>
-  </div>
-
-  <!-- Relatos -->
-  <div id="relatos" class="secao">
-    <input type="text" placeholder="Nome do posto">
-    <textarea placeholder="Descreva o problema ou observação" rows="5"></textarea>
-    <button class="botao">Enviar Relato</button>
-    <button class="botao" onclick="mostrarSecao('inicio')">Voltar</button>
-  </div>
-
-  <!-- Mapa -->
-  <div id="mapa" class="secao">
-    <div class="mapa">Mapa será exibido aqui</div>
-    <button class="botao" onclick="mostrarSecao('inicio')">Voltar</button>
-  </div>
-
-  <!-- Detalhes do Posto -->
-  <div id="posto" class="secao">
-    <div class="card">
-      <div class="titulo">Nome do posto</div>
-      <div class="card">⭐ Nota: 4.2</div>
-      <div class="card">🔍 Suspeita IA: 68%</div>
-    </div>
-
-    <div class="card">
-      <div class="titulo">Relatório da IA</div>
-      <p>Alta chance de adulteração.</p>
-      <p>Reclamações recentes: carro falhando, consumo elevado, dificuldade na partida.</p>
-    </div>
-
-    <div class="card comentarios">
-      <div class="titulo">Comentários recentes</div>
-      <ul>
-        <li>“Meu carro engasgou depois de abastecer.”</li>
-        <li>“Consumo aumentou muito.”</li>
-        <li>“Gasolina com cheiro estranho.”</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <div class="titulo">Gráfico de reputação</div>
-      <div class="grafico">Gráfico aparecerá aqui</div>
-    </div>
-
-    <button class="botao" onclick="mostrarSecao('inicio')">Voltar</button>
-  </div>
-
-</div>
-
-<script>
-function mostrarSecao(secao) {
-  document.querySelectorAll('.secao').forEach(s => s.style.display='none');
-  document.getElementById(secao).style.display='block';
-}
-</script>
 
 </body>
 </html>
